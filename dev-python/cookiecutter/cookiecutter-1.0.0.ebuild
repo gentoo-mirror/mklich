@@ -17,7 +17,11 @@ KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~s
 SLOT="0"
 IUSE="doc test"
 
-RDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
+RDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
+    dev-python/jinja[${PYTHON_USEDEP}]
+    dev-python/pyyaml[${PYTHON_USEDEP}]
+    dev-python/click[${PYTHON_USEDEP}]
+    dev-python/mock[${PYTHON_USEDEP}]"
 DEPEND="${RDEPEND}
 	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	test? (
