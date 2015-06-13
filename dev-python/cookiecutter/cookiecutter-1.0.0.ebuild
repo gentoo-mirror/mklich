@@ -20,7 +20,10 @@ IUSE="doc test"
 RDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 DEPEND="${RDEPEND}
 	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
-	test? ( dev-python/pytest[${PYTHON_USEDEP}] )"
+	test? (
+		dev-python/mock[${PYTHON_USEDEP}]
+        dev-python/pytest[${PYTHON_USEDEP}]
+    )"
 
 
 DOCS=( docs/index.rst )
