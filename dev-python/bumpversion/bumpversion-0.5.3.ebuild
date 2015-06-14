@@ -10,8 +10,6 @@ inherit distutils-r1
 
 DESCRIPTION="Version-bump your software with a single command!"
 HOMEPAGE="http://pypi.python.org/pypi/bumpversion https://github.com/peritus/bumpversion"
-# SRC_URI="https://github.com/peritus/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
-
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="MIT"
@@ -29,15 +27,10 @@ DEPEND="${RDEPEND}
 
 DOCS=( README.rst )
 
-# python_compile_all() {
-#	use doc && emake -C docs html
-# }
-
 python_test() {
 	py.test || die "Tests fail with ${EPYTHON}"
 }
 
 python_install_all() {
-	# use doc && local HTML_DOCS=( "${S}"/docs/_build/html/. )
 	distutils-r1_python_install_all
 }
