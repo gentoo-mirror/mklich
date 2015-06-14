@@ -30,7 +30,7 @@ DEPEND="${RDEPEND}
     )"
 
 
-DOCS=( docs/index.rst )
+DOCS=( README.rst )
 
 python_compile_all() {
 	use doc && emake -C docs html
