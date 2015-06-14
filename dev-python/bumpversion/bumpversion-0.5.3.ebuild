@@ -8,7 +8,7 @@ PYTHON_COMPAT=( python2_7 python3_{2,3,4} pypy )
 
 inherit distutils-r1
 
-DESCRIPTION="A command-line utility that creates projects from cookiecutters (project templates)"
+DESCRIPTION="Version-bump your software with a single command!"
 HOMEPAGE="http://pypi.python.org/pypi/bumpversion https://github.com/peritus/bumpversion"
 # SRC_URI="https://github.com/peritus/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
@@ -20,8 +20,7 @@ SLOT="0"
 IUSE="doc test"
 
 # TODO: dependencies must have versions
-RDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
-    dev-python/mock[${PYTHON_USEDEP}]"
+RDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 DEPEND="${RDEPEND}
 	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
 	test? (
