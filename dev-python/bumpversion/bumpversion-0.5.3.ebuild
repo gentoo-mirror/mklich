@@ -2,8 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="5"
-
+EAPI=5
 PYTHON_COMPAT=( python2_7 python3_{2,3,4} pypy )
 
 inherit distutils-r1
@@ -13,12 +12,12 @@ HOMEPAGE="http://pypi.python.org/pypi/bumpversion https://github.com/peritus/bum
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="MIT"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~x86 ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~sparc-solaris ~x64-solaris ~x86-solaris"
+KEYWORDS="~amd64 ~x86"
 SLOT="0"
 IUSE="test"
 
-RDEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
-DEPEND="${RDEPEND}
+DEPEND="
+    dev-python/setuptools[${PYTHON_USEDEP}]
 	test? (
 		dev-python/mock[${PYTHON_USEDEP}]
         dev-python/pytest[${PYTHON_USEDEP}]
@@ -29,8 +28,4 @@ DOCS=( README.rst )
 
 python_test() {
 	py.test || die "Tests fail with ${EPYTHON}"
-}
-
-python_install_all() {
-	distutils-r1_python_install_all
 }
