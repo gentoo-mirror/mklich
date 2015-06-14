@@ -29,15 +29,15 @@ DEPEND="${RDEPEND}
 
 DOCS=( README.rst )
 
-python_compile_all() {
-	use doc && emake -C docs html
-}
+# python_compile_all() {
+#	use doc && emake -C docs html
+# }
 
 python_test() {
 	py.test || die "Tests fail with ${EPYTHON}"
 }
 
 python_install_all() {
-	use doc && local HTML_DOCS=( "${S}"/docs/_build/html/. )
+	# use doc && local HTML_DOCS=( "${S}"/docs/_build/html/. )
 	distutils-r1_python_install_all
 }
