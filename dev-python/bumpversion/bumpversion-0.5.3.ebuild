@@ -10,7 +10,9 @@ inherit distutils-r1
 
 DESCRIPTION="A command-line utility that creates projects from cookiecutters (project templates)"
 HOMEPAGE="http://pypi.python.org/pypi/bumpversion https://github.com/peritus/bumpversion"
-SRC_URI="https://github.com/peritus/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+# SRC_URI="https://github.com/peritus/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+
+SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="MIT"
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~x86 ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~sparc-solaris ~x64-solaris ~x86-solaris"
